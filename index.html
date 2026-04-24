@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="card header">
+    <div>
+      <p id="clock"></p>
+      <h1 id="greeting"></h1>
+      <p id="date"></p>
+    </div>
+    <button id="themeBtn" title="Toggle theme">🌙</button>
+  </header>
+
+  <main class="grid">
+
+    <!-- FOCUS TIMER -->
+    <section class="card timer-card">
+      <p class="label">Focus Timer</p>
+
+      <div class="ring-wrap">
+        <svg width="180" height="180" viewBox="0 0 180 180">
+          <circle class="track" cx="90" cy="90" r="82" />
+          <circle class="progress" id="arc" cx="90" cy="90" r="82"
+            stroke-dasharray="515.22" stroke-dashoffset="0" />
+        </svg>
+        <span id="timerDisplay">25:00</span>
+      </div>
+
+      <div class="pomo-set">
+        <label for="pomInput">Minutes:</label>
+        <input id="pomInput" type="number" min="1" max="120" value="25" />
+        <button id="setBtn">Set</button>
+      </div>
+
+      <div class="timer-btns">
+        <button id="startBtn" class="btn-accent">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="sessions">
+        <span>Sessions:</span>
+        <div id="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TO-DO LIST -->
+    <section class="card todo-card">
+      <p class="label">To-Do List</p>
+
+      <div class="input-row">
+        <input id="taskInput" type="text" placeholder="Add a new task…" maxlength="120" />
+        <button id="addTaskBtn" class="btn-accent">+</button>
+      </div>
+      <p id="taskError" class="error"></p>
+
+      <ul id="taskList"></ul>
+      <p id="taskSummary" class="summary">No tasks yet.</p>
+    </section>
+
+    <!-- QUICK LINKS -->
+    <section class="card links-card">
+      <p class="label">Quick Links</p>
+
+      <div class="input-row">
+        <input id="linkLabel" type="text" placeholder="Label (e.g. YouTube)" />
+        <input id="linkUrl"   type="text" placeholder="URL (e.g. https://youtube.com)" />
+        <button id="addLinkBtn" class="btn-accent">+ Add</button>
+      </div>
+
+      <div id="linksGrid"></div>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
