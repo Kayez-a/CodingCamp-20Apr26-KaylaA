@@ -28,7 +28,7 @@ function updateClock() {
               : h < 21 ? 'Good evening 🌆'
               :           'Good night 🌙';
 
-  document.getElementById('greeting').innerHTML = `<span>${greet}</span>, dear`;
+  document.getElementById('greeting').innerHTML = `<span>${greet}</span>, RevoU`;
 
   const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   const months = ['January','February','March','April','May','June','July',
